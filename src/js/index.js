@@ -17,13 +17,13 @@ import {elements, renderLoader, clearLoader} from './views/base';
  * - liked recipes
  */
 const state = {};
-window.state = state;
+
 /** SEARCH CONTROLLER */
 const controlSearch = async () => {
     // 1) Get query from the view
     const query = searchView.getInput()
     //const query = 'pizza' //TESTING
-    console.log(query)
+    //console.log(query)
 
     if (query){
         // 2) new search obj and add it to state
@@ -167,7 +167,6 @@ elements.shopping.addEventListener('click', e => {
 
 
 
-// main
 const controlLike = () => {
     if (!state.likes) state.likes = new Likes();
     const currentID = state.recipe.id;
@@ -235,5 +234,3 @@ elements.recipe.addEventListener('click', e => {
         controlLike();
     }
 });
-
-window.l = new List();
